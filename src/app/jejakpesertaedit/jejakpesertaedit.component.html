@@ -1,0 +1,51 @@
+
+<!-- /.box -->
+<!-- general form elements disabled -->
+<div class="col-xs-11">
+        <div class="box box-warning">
+    <div class="box-header with-border">
+        <h3 class="box-title">Update Jejak Peserta</h3>
+    </div>
+    <!-- /.box-header -->
+    <div class="box-body">
+        <form role="form">
+        <!-- text input -->
+        <div class="form-group">
+            <label>Kode Peserta</label>
+            <input [(ngModel)]="dataEdit.KdPeserta" name="kodePeserta" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Kode Angkatan</label>
+            <input [(ngModel)]="dataEdit.KdAngkatan" name="kodeAngkatan" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+            <label>Tanggal</label>
+            <div class="input-group date">
+                <div class="input-group-addon">
+                <i class="fa fa-calendar"></i>
+                </div>
+                <input [(ngModel)]="dataEdit.Tgl" name="tanggal" type="text" class="form-control pull-right" id="datepicker">
+            </div>
+        </div>
+        <div class="form-group">
+            <label>Tipe Peserta</label>
+            <input [(ngModel)]="dataEdit.TipePeserta" name="tipePeserta" type="text" class="form-control">
+        </div>
+        <div class="box-footer">
+                <button type="submit" class="btn btn-default" (click)="jejakPesertaBack()">Cancel</button>
+                <button type="submit" class="btn btn-info pull-right" (click)="putJejakPeserta(dataEdit._id)">Update</button>        
+        </div>        
+    </form>
+    </div>
+    <!-- /.box-body -->
+    </div>
+</div>
+<script>
+    $(function () {
+          //Initialize Select2 Elements
+        $(".select2").select2();
+        $('#datepicker').datepicker({
+            autoclose: true
+        });
+    });
+</script>

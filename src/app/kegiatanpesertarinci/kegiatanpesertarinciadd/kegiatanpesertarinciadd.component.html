@@ -1,0 +1,49 @@
+<!-- /.box -->
+<!-- general form elements disabled -->
+<div class="col-xs-11">
+  <div class="box box-warning">
+<div class="box-header with-border">
+  <h3 class="box-title">Add Kegiatan Peserta Rinci</h3>
+</div>
+<!-- /.box-header -->
+<div class="box-body">
+  <form role="form" (ngSubmit)="postKegiatanPesertaRinci(dataAdd)">
+  <!-- text input -->
+  <div class="form-group">
+      <label>Kode Kegiatan Peserta</label>
+      <input [(ngModel)]="dataAdd.KdKegiatanPeserta" name="kodePeserta" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>Jam Mulai</label>
+      <input [(ngModel)]="dataAdd.JamMulai" name="jamStart" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>Jam Selesai</label>
+      <input [(ngModel)]="dataAdd.JamSelesai" name="jamEnd" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+      <label>Status Hari</label>
+      <input [(ngModel)]="dataAdd.StatusHari" name="statHari" type="text" class="form-control">
+  </div>
+  <div class="form-group">
+    <label>Keterangan Hari</label>
+    <input [(ngModel)]="dataAdd.KeteranganHari" name="ketHari" type="text" class="form-control">
+</div>
+  <div class="box-footer">
+      <button type="submit" class="btn btn-default" (click)="kegiatanPesertaRinciBack()">Cancel</button>
+      <button type="submit" class="btn btn-info pull-right">Add</button>       
+  </div>        
+</form>
+</div>
+<!-- /.box-body -->
+</div>
+</div>
+<script>
+$(function () {
+    //Initialize Select2 Elements
+  $(".select2").select2();
+  $('#datepicker').datepicker({
+      autoclose: true
+  });
+});
+</script>
